@@ -59,3 +59,6 @@ Update Shortcuts [opens App Store] | OK
 ## Misc Notes
 * The last Workflow version was 1.7.8
 * The first Shortcuts version was 2.0.0
+
+## Contributing
+Pull requests with new and updated information or suggestions are welcome!
