@@ -15,23 +15,23 @@ The file is in a binary property list format. It’s possible to open it by tran
 	* `WFWorkflowIconImageData`: Data
 	* `WFWorkflowIconGlyphNumber`: A number
 * `WFWorkflowInputContentItemClasses`: An array of strings, representing the types of input content accepted
-	* WFAppStoreAppContentItem
-	* WFArticleContentItem
-	* WFContactContentItem
-	* WFDateContentItem
-	* WFEmailAddressContentItem
-	* WFGenericFileContentItem
-	* WFImageContentItem
-	* WFiTunesProductContentItem
-	* WFLocationContentItem
-	* WFDCMapsLinkContentItem
-	* WFAVAssetContentItem
-	* WFPDFContentItem
-	* WFPhoneNumberContentItem
-	* WFRichTextContentItem
-	* WFSafariWebPageContentItem
-	* WFStringContentItem
-	* WFURLContentItem
+	* `WFAppStoreAppContentItem`
+	* `WFArticleContentItem`
+	* `WFContactContentItem`
+	* `WFDateContentItem`
+	* `WFEmailAddressContentItem`
+	* `WFGenericFileContentItem`
+	* `WFImageContentItem`
+	* `WFiTunesProductContentItem`
+	* `WFLocationContentItem`
+	* `WFDCMapsLinkContentItem`
+	* `WFAVAssetContentItem`
+	* `WFPDFContentItem`
+	* `WFPhoneNumberContentItem`
+	* `WFRichTextContentItem`
+	* `WFSafariWebPageContentItem`
+	* `WFStringContentItem`
+	* `WFURLContentItem`
 * `WFWorkflowTypes`:  An array of strings, representing the available usage types of the workflow, one or more of
 	* `ActionExtension` (“Show in Share Sheet”
 	* `NCWidget`  (“Show in [Notification Center] Widget”)
@@ -81,7 +81,7 @@ Most Shortcuts URL schemes remain the same as Workflows, and can be used interch
 
 * Import Shortcut from URL: `shortcuts://import-shortcut/`
 	* Query parameters:
-		* name (optiona name for Shortcut)
+		* name (optional name for Shortcut)
 		* url (required file download URL)
 	* Example: `shortcuts://import-shortcut/?name=Awesome%20Shortcut&url=https%3A%2F%2Fdownloadwebsite.com`
 
