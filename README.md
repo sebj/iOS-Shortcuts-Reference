@@ -14,8 +14,28 @@ The file is in a binary property list format. It’s possible to open it by tran
 	* `WFWorkflowIconStartColor`: A number representing color of the workflow’s icon, see below.
 	* `WFWorkflowIconImageData`: Data
 	* `WFWorkflowIconGlyphNumber`: A number
-* `WFWorkflowInputContentItemClasses`:
-* `WFWorkflowTypes`:  An array of strings, representing the available usage types of the workflow, one or more of: `ActionExtension` (“Show in Share Sheet”, `NCWidget`  (“Show in [Notification Center] Widget”) or  `WatchKit` (watch availability, supported in the old Workflow app & Shortcuts during some iOS 12 betas)
+* `WFWorkflowInputContentItemClasses`: An array of strings, representing the types of input content accepted
+	* WFAppStoreAppContentItem
+	* WFArticleContentItem
+	* WFContactContentItem
+	* WFDateContentItem
+	* WFEmailAddressContentItem
+	* WFGenericFileContentItem
+	* WFImageContentItem
+	* WFiTunesProductContentItem
+	* WFLocationContentItem
+	* WFDCMapsLinkContentItem
+	* WFAVAssetContentItem
+	* WFPDFContentItem
+	* WFPhoneNumberContentItem
+	* WFRichTextContentItem
+	* WFSafariWebPageContentItem
+	* WFStringContentItem
+	* WFURLContentItem
+* `WFWorkflowTypes`:  An array of strings, representing the available usage types of the workflow, one or more of
+	* `ActionExtension` (“Show in Share Sheet”
+	* `NCWidget`  (“Show in [Notification Center] Widget”)
+	* `WatchKit` (watch availability, supported in the old Workflow app & Shortcuts during some iOS 12 betas)
 * `WFWorkflowActions`: Array of actions, each in the format:
 	* `WFWorkflowActionIdentifier`: An action identifier string, formatted in reverse domain name notation, e.g. `is.workflow.actions.address`
 	* `WFWorkflowActionParameters`: Array of parameters [String | Number | Object], each an identifier and a value 
@@ -23,7 +43,7 @@ The file is in a binary property list format. It’s possible to open it by tran
 ### Workflow Icon Start Color
 A number representing the start color of the workflow’s icon gradient. As an example, converting the value 4282601983 reveals an 8-digit hex color in the format RRGGBBAA, FF4351FF.
 
-This seems to work for all colors tested, except for dark gray (255).
+This works for all colors tested, except for dark gray (255).
 
 Shortcuts does not appear to support custom icon colours when a workflow edited on a Mac is opened on iOS – the colour will instead default to gray.
 
@@ -56,9 +76,25 @@ This shortcut cannot be opened because it was created on a newer version of the 
 
 Update Shortcuts [opens App Store] | OK
 
-## Misc Notes
+# URL Schemes
+Most Shortcuts URL schemes remain the same as Workflows, and can be used interchangeably by replacing 'shortcut' with 'workflow' and vice-versa.
+
+* Import Shortcut from URL: `shortcuts://import-shortcut/`
+	* Query parameters:
+		* name (optiona name for Shortcut)
+		* url (required file download URL)
+	* Example: `shortcuts://import-shortcut/?name=Awesome%20Shortcut&url=https%3A%2F%2Fdownloadwebsite.com`
+
+* Run Shortcut: `shortcuts://x-callback-url/run-shortcut`
+	* Query parameters:
+		* name (string name for Shortcut)
+	* Example: `shortcuts://x-callback-url/run-shortcut/?name=Shortcut%20to%20Run`
+	* Notes:
+		* Shortcuts added to the homescreen tend to use the URL with the extra parameters `id` (the internal UUID for the Shortcut) and `source`, which is always `homescreen`.
+
+# Misc Notes
 * The last Workflow version was 1.7.8
 * The first Shortcuts version was 2.0.0
 
-## Contributing
+# Contributing
 Pull requests with new and updated information or suggestions are welcome!
