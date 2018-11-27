@@ -76,21 +76,31 @@ This shortcut cannot be opened because it was created on a newer version of the 
 
 Update Shortcuts [opens App Store] | OK
 
-# URL Schemes
+# Key URL Schemes
 Most Shortcuts URL schemes remain the same as Workflows, and can be used interchangeably by replacing 'shortcut' with 'workflow' and vice-versa.
 
-* Import Shortcut from URL: `shortcuts://import-shortcut/`
-	* Query parameters:
-		* name (optional name for Shortcut)
-		* url (required file download URL)
-	* Example: `shortcuts://import-shortcut/?name=Awesome%20Shortcut&url=https%3A%2F%2Fdownloadwebsite.com`
+See the ["Use URL Schemes" section, under Advanced Shortcuts in Apple's Shortcuts User Guide](https://support.apple.com/en-gb/guide/shortcuts/about-url-schemes-apd621a1ad7a/ios) for more.
 
-* Run Shortcut: `shortcuts://x-callback-url/run-shortcut`
+* Import Shortcut from URL: `shortcuts://import-shortcut/?url=[url]&name=[name]`
+	* Parameters:
+		* url: file download URL
+		* name (optional): name for shortcut, defaults to shortcut filename
+		* silent (optional): `true` to import without opening the shortcut, `false` by default to open and display the shortcut to the user
+	* Example: `shortcuts://import-shortcut/?name=Awesome%20Shortcut&url=https%3A%2F%2Fdownloadwebsite.com`
+	* 
+
+* Run Shortcut: `shortcuts://run-shortcut`
 	* Query parameters:
-		* name (string name for Shortcut)
-	* Example: `shortcuts://x-callback-url/run-shortcut/?name=Shortcut%20to%20Run`
+		* name: string name for shortcut
+		* input (optional): initial input into the shortcut, a text string or the word `clipboard` to use the contents of the clipboard
+	* Example: `shortcuts://run-shortcut/?name=Shortcut%20to%20Run`
 	* Notes:
 		* Shortcuts added to the homescreen tend to use the URL with the extra parameters `id` (the internal UUID for the Shortcut) and `source`, which is always `homescreen`.
+
+* Open Shortcuts:
+	* `shortcuts://` to launch app to last-used state
+	* `shortcuts://create-shortcut` to create a new shortcut
+	* `shortcuts://open-shortcut?name=[name]` to open the app to the shortcut of a given name
 
 # Misc Notes
 * The last Workflow version was 1.7.8
