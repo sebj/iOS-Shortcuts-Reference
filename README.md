@@ -11,7 +11,7 @@ The file is in a binary property list format. It’s possible to open it by tran
 * `WFWorkflowMinimumClientVersion`: An optional string representing the minimum client app version required to run the workflow (e.g. 411)
 * `WFWorkflowName`: An optional string name for the workflow. If this is not present, an imported workflow’s filename will be used
 * `WFWorkflowIcon`: An object containing:
-	* `WFWorkflowIconStartColor`: A number representing color of the workflow’s icon, see below.
+	* `WFWorkflowIconStartColor`: A number representing color of the shortcut's icon, see below.
 	* `WFWorkflowIconImageData`: Data
 	* `WFWorkflowIconGlyphNumber`: A number
 * `WFWorkflowInputContentItemClasses`: An array of strings, representing the types of input content accepted
@@ -40,29 +40,27 @@ The file is in a binary property list format. It’s possible to open it by tran
 	* `WFWorkflowActionIdentifier`: An action identifier string, formatted in reverse domain name notation, e.g. `is.workflow.actions.address`
 	* `WFWorkflowActionParameters`: Array of parameters [String | Number | Object], each an identifier and a value 
 
-### Workflow Icon Start Color
-A number representing the start color of the workflow’s icon gradient. As an example, converting the value 4282601983 reveals an 8-digit hex color in the format RRGGBBAA, FF4351FF.
+### Shortcut Icon Start Color
+The start color of the shortcut's icon gradient is stored as an RGBA-8 number. As an example, converting the stored value `4282601983` reveals the 8-digit hex color `FF4351FF` in the format `RRGGBBAA`.
 
-This works for all colors tested, except for dark gray (255).
-
-Shortcuts does not appear to support custom icon colours when a workflow edited on a Mac is opened on iOS – the colour will instead default to gray.
+Shortcuts does not appear to support custom icon colours when a shortcut edited on a Mac is opened on iOS – the colour will instead default to gray.
 
 Colors available in Shortcuts and their respective values (liable to change):
-* Red: 4282601983
-* Dark Orange: 4251333119
-* Orange: 4271458815
-* Yellow: 4274264319
-* Green: 4292093695
-* Turquoise: 431817727
-* Cyan: 1440408063
-* Blue: 463140863
-* Navy: 946986751
-* Violet: 2071128575
-* Purple: 3679049983
-* Dark Gray: 255
-* Pink: 3980825855
-* Taupe: 3031607807
-* Gray: 2846468607
+* Red: `0xFF4351FF` / `4282601983`
+* Dark Orange: `0xFD6631FF` / `4251333119`
+* Orange: `0xFE9949FF` / `4271458815`
+* Yellow: `0xFEC418FF` / `4274264319`
+* Green: `0xFFD426FF` / `4292093695`
+* Teal: `0x19BD03FF` / `431817727`
+* Light Blue: `0x55DAE1FF` / `1440408063`
+* Blue: `0x1B9AF7FF` / `463140863`
+* Dark Blue: `0x3871DEFF` / `946986751`
+* Violet: `0x7B72E9FF` / `2071128575`
+* Purple: `0xDB49D8FF` / `3679049983`
+* Dark Gray: `0x000000FF` / `255`
+* Pink: `0xED4694FF` / `3980825855`
+* Taupe: `0xB4B2A9FF` / `3031607807`
+* Gray: `0xA9A9A9FF` / `2846468607`
 
 ### Importing with a  `WFWorkflowMinimumClientVersion` greater than the client version
 
