@@ -8,9 +8,16 @@ The file is in a binary property list format. It’s possible to open it by tran
 
 * `WFWorkflowClientVersion`: A number representing the version of the client app used to create the workflow (e.g. 700).
 * `WFWorkflowClientRelease`: A string representing the release semantic version of the client app used to create the workflow (e.g. “1.7.8” or “2.0.0”)
-* `WFWorkflowMinimumClientVersion`: An optional string representing the minimum client app version required to run the workflow (e.g. 411)
+* `WFWorkflowMinimumClientVersion`: An optional integer representing the minimum client app version required to run the workflow (e.g. 411)
+* `WFWorkflowMinimumClientVersionString`: An optional string representation of `WFWorkflowMinimumClientVersion`
 * `WFWorkflowName`: An optional string name for the workflow. If this is not present, an imported workflow’s filename will be used
-* `WFWorkflowIcon`: An object containing:
+* `WFWorkflowImportQuestions`: An array of question dictionaries to ask the user when importing a shortcut, each containing:
+	* `ActionIndex`: An integer representing the index of the action in the shortcut (`WFWorkflowActions` array index)
+	* `Category`: A string, usually `Parameter`
+	* `DefaultValue`: A string or boolean value to use if the user does not provide a value
+	* `ParameterKey`: The dictionary key to be populate with the user's answer, inside the given action dictionary
+	* `Text`: The question/prompt to present to the user in order to populate the action's parameter value
+* `WFWorkflowIcon`: A dictionary containing:
 	* `WFWorkflowIconStartColor`: A number representing color of the shortcut's icon, see below.
 	* `WFWorkflowIconImageData`: Data
 	* `WFWorkflowIconGlyphNumber`: A number
@@ -33,17 +40,19 @@ The file is in a binary property list format. It’s possible to open it by tran
 	* `WFStringContentItem`
 	* `WFURLContentItem`
 * `WFWorkflowTypes`:  An array of strings, representing the available usage types of the workflow, one or more of
-	* `ActionExtension` (“Show in Share Sheet”
-	* `NCWidget`  (“Show in [Notification Center] Widget”)
-	* `WatchKit` (watch availability, supported in the old Workflow app & Shortcuts during some iOS 12 betas)
+	* `ActionExtension`: “Show in Share Sheet”
+	* `NCWidget`: “Show in [Notification Center] Widget”
+	* `WatchKit`: indicates watch availability, supported in the old Workflow app & Shortcuts during some iOS 12 betas. Unsupported in iOS 13 at time of writing, but all new shortcuts created have this string included by default.
 * `WFWorkflowActions`: Array of actions, each in the format:
 	* `WFWorkflowActionIdentifier`: An action identifier string, formatted in reverse domain name notation, e.g. `is.workflow.actions.address`
-	* `WFWorkflowActionParameters`: Array of parameters [String | Number | Object], each an identifier and a value 
+	* `WFWorkflowActionParameters`: Array of parameters [String | Number | Dictionary], each an identifier and a value 
 
-### Shortcut Icon Start Color
-The start color of the shortcut's icon gradient is stored as an RGBA-8 number. As an example, converting the stored value `4282601983` reveals the 8-digit hex color `FF4351FF` in the format `RRGGBBAA`.
+### Shortcut Icon/Tile Color
+The color of the shortcut's icon is stored as an RGBA-8 number. As an example, converting the stored value `4282601983` reveals the 8-digit hex color `FF4351FF` in the format `RRGGBBAA`.
 
 Shortcuts does not appear to support custom icon colours when a shortcut edited on a Mac is opened on iOS – the colour will instead default to gray.
+
+On iOS 12, this color was used as the start color of the icon's gradient. On iOS 13, the entire shortcut icon is now drawn in this color.
 
 Colors available in Shortcuts and their respective values (liable to change):
 * Red: `0xFF4351FF` / `4282601983`
@@ -102,7 +111,8 @@ See the ["Use URL Schemes" section, under Advanced Shortcuts in Apple's Shortcut
 
 # Misc Notes
 * The last Workflow version was 1.7.8
-* The first Shortcuts version was 2.0.0
+* The first Shortcuts version was 2.0.0 (with iOS 12)
+* Shortcuts 3.0.0 arrived with iOS 13
 
 # Contributing
 Pull requests with new and updated information or suggestions are welcome!
