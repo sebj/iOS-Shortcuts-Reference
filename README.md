@@ -1,8 +1,9 @@
-# Shortcuts File Format
-Shortcuts are exported from the iOS 12 Shortcuts app with a `.shortcuts` extension. Workflows exported from the Workflows app use a `.wflow` extension, but share the same internal format.
+# Shortcuts File Format Reference
 
 ## File Structure
-The format of a shortcut and a workflow file are the same – the file format does not seem to have changed going from the Workflow app to Apple’s iOS 12 Shortcuts app. Many strings remain prefixed with `WFWorkflow`.
+Shortcuts are exported from the iOS Shortcuts app with a `.shortcuts` extension. Workflows exported from the Workflows app use a `.wflow` extension.
+
+The format of a shortcut and a workflow file are mostly the same – the file format does not seem to have changed going from the Workflow app to Apple’s iOS Shortcuts app. Many keys and values remain prefixed with `WFWorkflow`.
 
 The file is in a binary property list format. It’s possible to open it by transferring to a Mac and changing the file extension to `.plist`, where it can then be viewed in Xcode or other supported apps.
 
