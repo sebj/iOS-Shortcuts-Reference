@@ -1,7 +1,7 @@
 # Shortcuts File Format Reference
 
 ## File Structure
-Shortcuts are exported from the iOS Shortcuts app with a `.shortcuts` extension. Workflows exported from the Workflows app use a `.wflow` extension.
+Shortcuts are exported from the iOS Shortcuts app with a `.shortcut` extension in iOS 14 or a `.shortcuts` extension in iOS 13. Workflows exported from the Workflows app use a `.wflow` extension.
 
 The format of a shortcut and a workflow file are mostly the same – the file format does not seem to have changed going from the Workflow app to Apple’s iOS Shortcuts app. Many keys and values remain prefixed with `WFWorkflow`.
 
@@ -43,7 +43,8 @@ The file is in a binary property list format. It’s possible to open it by tran
 * `WFWorkflowTypes`:  An array of strings, representing the available usage types of the workflow, one or more of
 	* `ActionExtension`: “Show in Share Sheet”
 	* `NCWidget`: “Show in [Notification Center] Widget”
-	* `WatchKit`: indicates watch availability, supported in the old Workflow app & Shortcuts during some iOS 12 betas. Unsupported in iOS 13 at time of writing, but all new shortcuts created have this string included by default.
+	* `Sleep`: “Show in Sleep Mode” (iOS 14)
+	* `WatchKit`: indicates watch availability, supported in iOS 14, some iOS 12 betas, and the old Workflow app. Unsupported in iOS 13, despite all new shortcuts having this string included by default.
 * `WFWorkflowActions`: Array of actions, each in the format:
 	* `WFWorkflowActionIdentifier`: An action identifier string, formatted in reverse domain name notation, e.g. `is.workflow.actions.address`
 	* `WFWorkflowActionParameters`: Array of parameters [String | Number | Dictionary], each an identifier and a value 
@@ -53,7 +54,7 @@ The color of the shortcut's icon is stored as an RGBA-8 number. As an example, c
 
 Shortcuts does not appear to support custom icon colours when a shortcut edited on a Mac is opened on iOS – the colour will instead default to gray.
 
-On iOS 12, this color was used as the start color of the icon's gradient. On iOS 13, the entire shortcut icon is now drawn in this color.
+On iOS 12, this color was used as the start color of the icon's gradient. On iOS 13 and 14, the entire shortcut icon is now drawn in this color.
 
 Colors available in Shortcuts and their respective values (liable to change):
 * Red: `0xFF4351FF` / `4282601983`
