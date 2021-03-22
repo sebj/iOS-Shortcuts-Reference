@@ -49,6 +49,139 @@ The file is in a binary property list format. It’s possible to open it by tran
 	* `WFWorkflowActionIdentifier`: An action identifier string, formatted in reverse domain name notation, e.g. `is.workflow.actions.address`
 	* `WFWorkflowActionParameters`: Array of parameters [String | Number | Dictionary], each an identifier and a value 
 
+### Action Identifiers (WFWorkflowActionIdentifier)
+
+#### Built-in
+
+* is.workflow.actions.address
+* is.workflow.actions.addtoplaylist
+* is.workflow.actions.adjustdate
+* is.workflow.actions.airplanemode.set
+* is.workflow.actions.alert
+* is.workflow.actions.appendnote
+* is.workflow.actions.appendvariable
+* is.workflow.actions.ask
+* is.workflow.actions.base64encode
+* is.workflow.actions.bluetooth.set
+* is.workflow.actions.calculateexpression
+* is.workflow.actions.cellulardata.set
+* is.workflow.actions.choosefromlist
+* is.workflow.actions.choosefrommenu
+* is.workflow.actions.clearupnext
+* is.workflow.actions.comment
+* is.workflow.actions.conditional
+* is.workflow.actions.count
+* is.workflow.actions.date
+* is.workflow.actions.delay
+* is.workflow.actions.deletephotos
+* is.workflow.actions.detect.dictionary
+* is.workflow.actions.detect.images
+* is.workflow.actions.detect.link
+* is.workflow.actions.detect.number
+* is.workflow.actions.detect.text
+* is.workflow.actions.dictionary
+* is.workflow.actions.dnd.set
+* is.workflow.actions.documentpicker.open
+* is.workflow.actions.documentpicker.save
+* is.workflow.actions.downloadurl
+* is.workflow.actions.exit
+* is.workflow.actions.file.getlink
+* is.workflow.actions.filter.health.quantity
+* is.workflow.actions.filter.notes
+* is.workflow.actions.flashlight
+* is.workflow.actions.format.date
+* is.workflow.actions.get.playlist
+* is.workflow.actions.getarticle
+* is.workflow.actions.getclipboard
+* is.workflow.actions.getcurrentlocation
+* is.workflow.actions.getcurrentsong
+* is.workflow.actions.getdevicedetails
+* is.workflow.actions.gethalfwaypoint
+* is.workflow.actions.gethtmlfromrichtext
+* is.workflow.actions.getipaddress
+* is.workflow.actions.getitemfromlist
+* is.workflow.actions.getmapslink
+* is.workflow.actions.getmarkdownfromrichtext
+* is.workflow.actions.getmyworkflows
+* is.workflow.actions.getrichtextfromhtml
+* is.workflow.actions.gettext
+* is.workflow.actions.gettimebetweendates
+* is.workflow.actions.gettraveltime
+* is.workflow.actions.getvalueforkey
+* is.workflow.actions.getwebpagecontents
+* is.workflow.actions.health.quantity.log
+* is.workflow.actions.image.combine
+* is.workflow.actions.image.crop
+* is.workflow.actions.image.resize
+* is.workflow.actions.list
+* is.workflow.actions.lowpowermode.set
+* is.workflow.actions.makezip
+* is.workflow.actions.math
+* is.workflow.actions.nothing
+* is.workflow.actions.notification
+* is.workflow.actions.number.random
+* is.workflow.actions.number
+* is.workflow.actions.openapp
+* is.workflow.actions.openin
+* is.workflow.actions.openurl
+* is.workflow.actions.pausemusic
+* is.workflow.actions.phonenumber
+* is.workflow.actions.playmusic
+* is.workflow.actions.playsound
+* is.workflow.actions.previewdocument
+* is.workflow.actions.properties.articles
+* is.workflow.actions.properties.files
+* is.workflow.actions.properties.images
+* is.workflow.actions.properties.locations
+* is.workflow.actions.properties.music
+* is.workflow.actions.repeat.count
+* is.workflow.actions.repeat.each
+* is.workflow.actions.round
+* is.workflow.actions.rss.extract
+* is.workflow.actions.rss
+* is.workflow.actions.runjavascriptonwebpage
+* is.workflow.actions.runworkflow
+* is.workflow.actions.savetocameraroll
+* is.workflow.actions.searchlocalbusinesses
+* is.workflow.actions.searchmaps
+* is.workflow.actions.selectphoto
+* is.workflow.actions.sendmessage
+* is.workflow.actions.setbrightness
+* is.workflow.actions.setclipboard
+* is.workflow.actions.setvariable
+* is.workflow.actions.setvolume
+* is.workflow.actions.share
+* is.workflow.actions.shazamMedia
+* is.workflow.actions.shownote
+* is.workflow.actions.showwebpage
+* is.workflow.actions.speaktext
+* is.workflow.actions.statistics
+* is.workflow.actions.takephoto
+* is.workflow.actions.text.combine
+* is.workflow.actions.text.match.getgroup
+* is.workflow.actions.text.match
+* is.workflow.actions.text.replace
+* is.workflow.actions.text.split
+* is.workflow.actions.url.expand
+* is.workflow.actions.url
+* is.workflow.actions.urlencode
+* is.workflow.actions.waittoreturn
+* is.workflow.actions.wifi.set
+
+#### Third Party
+
+* com.alexhay.ToolboxProForShortcuts.BatteryStatusIntent
+* com.algebraiclabs.foodnoms.GetTodayGoalStatusIntent
+* com.algebraiclabs.foodnoms.LogMealIntent
+* com.apple.mobilenotes.ICNotesFolderIntent
+* com.apple.mobilenotes.SharingExtension
+* com.apple.mobilephone.call
+* com.apple.mobiletimer-framework.MobileTimerIntents.MTCreateAlarmIntent
+* com.apple.mobiletimer-framework.MobileTimerIntents.MTGetAlarmsIntent
+* com.apple.mobiletimer-framework.MobileTimerIntents.MTToggleAlarmIntent
+* com.pcalc.mobile.lite.CalcRunFunctionWithTwoParametersIntent
+* com.pcalc.mobile.lite.CalcSetRegisterWithValueIntent
+
 ### Shortcut Icon/Tile Color
 The color of the shortcut's icon is stored as an RGBA-8 number. As an example, converting the stored value `4282601983` reveals the 8-digit hex color `FF4351FF` in the format `RRGGBBAA`.
 
