@@ -44,8 +44,8 @@ The file is in a binary property list format. It’s possible to open it by tran
 	* `ActionExtension`: “Show in Share Sheet”
 	* `NCWidget`: “Show in [Notification Center] Widget”
 	* `Sleep`: “Show in Sleep Mode” (iOS 14)
-	* `WatchKit`: Indicated watch availability in some iOS 14 versions, some iOS 12 betas, and the old Workflow app. Unsupported in iOS 13, despite all new shortcuts having this string included by default.
-	* `Watch` seemingly superseded `WatchKit`
+	* `WatchKit`: Indicated Apple Watch availability in some iOS 14 versions, some iOS 12 betas, and the old Workflow app. Unsupported in iOS 13, despite all new shortcuts having this string included by default.
+	* `Watch`: "Show on Apple Watch" – Indicates Apple Watch availability in recent iOS 14 versions (and newer), seemingly superseding `WatchKit`.
 * `WFWorkflowActions`: Array of actions, each in the format:
 	* `WFWorkflowActionIdentifier`: An action identifier string, formatted in reverse domain name notation, e.g. `is.workflow.actions.address`
 	* `WFWorkflowActionParameters`: Array of parameters [String | Number | Dictionary], each an identifier and a value 
