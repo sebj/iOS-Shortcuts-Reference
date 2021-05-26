@@ -8,7 +8,7 @@ The format of a shortcut and a workflow file are mostly the same – the file fo
 The file is in a binary property list format. It’s possible to open it by transferring to a Mac and changing the file extension to `.plist`, where it can then be viewed in Xcode or other supported apps.
 
 * `WFWorkflowClientVersion`: A number representing the version of the client app used to create the workflow (e.g. 700).
-* `WFWorkflowClientRelease`: A string representing the release semantic version of the client app used to create the workflow (e.g. “1.7.8” or “2.0.0”)
+* `WFWorkflowClientRelease`: A string representing the release semantic version of the client app used to create the workflow (e.g. “1.7.8” or “2.0.0”). Seemingly no longer present in recent iOS 14 releases.
 * `WFWorkflowMinimumClientVersion`: An optional integer representing the minimum client app version required to run the workflow (e.g. 411)
 * `WFWorkflowMinimumClientVersionString`: An optional string representation of `WFWorkflowMinimumClientVersion`
 * `WFWorkflowName`: An optional string name for the workflow. If this is not present, an imported workflow’s filename will be used
@@ -44,7 +44,8 @@ The file is in a binary property list format. It’s possible to open it by tran
 	* `ActionExtension`: “Show in Share Sheet”
 	* `NCWidget`: “Show in [Notification Center] Widget”
 	* `Sleep`: “Show in Sleep Mode” (iOS 14)
-	* `WatchKit`: indicates watch availability, supported in iOS 14, some iOS 12 betas, and the old Workflow app. Unsupported in iOS 13, despite all new shortcuts having this string included by default.
+	* `WatchKit`: Indicated watch availability in some iOS 14 versions, some iOS 12 betas, and the old Workflow app. Unsupported in iOS 13, despite all new shortcuts having this string included by default.
+	* `Watch` seemingly superseded `WatchKit`
 * `WFWorkflowActions`: Array of actions, each in the format:
 	* `WFWorkflowActionIdentifier`: An action identifier string, formatted in reverse domain name notation, e.g. `is.workflow.actions.address`
 	* `WFWorkflowActionParameters`: Array of parameters [String | Number | Dictionary], each an identifier and a value 
@@ -115,6 +116,7 @@ See the ["Use URL Schemes" section, under Advanced Shortcuts in Apple's Shortcut
 * The last Workflow version was 1.7.8
 * The first Shortcuts version was 2.0.0 (with iOS 12)
 * Shortcuts 3.0.0 arrived with iOS 13
+* Recent iOS 14 releases now report a version in the format 10xx.x.xx
 
 # Contributing
 Pull requests with new and updated information or suggestions are welcome!
