@@ -41,6 +41,8 @@ The file is in a binary property list format. It’s possible to open it by tran
 	* `WFStringContentItem`
 	* `WFURLContentItem`
 * `WFWorkflowTypes`:  An array of strings, representing the available usage types of the workflow, one or more of
+	* `MenuBar`: “Keep in Menu Bar” (macOS Monterey / iOS 15)
+	* `QuickActions`: “Use as Quick Action” (macOS Monterey / iOS 15)
 	* `ActionExtension`: “Show in Share Sheet”
 	* `NCWidget`: “Show in [Notification Center] Widget”
 	* `Sleep`: “Show in Sleep Mode” (iOS 14)
