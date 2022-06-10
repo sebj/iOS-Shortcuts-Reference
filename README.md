@@ -1,11 +1,13 @@
 # Shortcuts File Format Reference
 
 ## File Structure
-Shortcuts are exported from the iOS Shortcuts app with a `.shortcut` extension in iOS 14 or a `.shortcuts` extension in iOS 13. Workflows exported from the Workflows app use a `.wflow` extension.
+Shortcuts are exported from the iOS Shortcuts app with a `.shortcut` extension in iOS 14 and later, or a `.shortcuts` extension in iOS 13. Workflows exported from the Workflows app used a `.wflow` extension.
 
 The format of a shortcut and a workflow file are mostly the same – the file format does not seem to have changed going from the Workflow app to Apple’s iOS Shortcuts app. Many keys and values remain prefixed with `WFWorkflow`.
 
-The file is in a binary property list format. It’s possible to open it by transferring to a Mac and changing the file extension to `.plist`, where it can then be viewed in Xcode or other supported apps.
+Until iOS 15, the file was in a binary property list format. It was possible to view its contents by transferring the file to a Mac and changing the file extension to `.plist`, where it could then be viewed in Xcode or other supported apps.
+
+From iOS 15 onwards, these files are now signed, and so they cannot be opened and parsed easily. The information from this point onwards, describes the last known file format before signing.
 
 * `WFWorkflowClientVersion`: A number representing the version of the client app used to create the workflow (e.g. 700).
 * `WFWorkflowClientRelease`: A string representing the release semantic version of the client app used to create the workflow (e.g. “1.7.8” or “2.0.0”). Seemingly no longer present in recent iOS 14 releases.
@@ -99,7 +101,6 @@ See the ["Use URL Schemes" section, under Advanced Shortcuts in Apple's Shortcut
 		* name (optional): name for shortcut, defaults to shortcut filename
 		* silent (optional): `true` to import without opening the shortcut, `false` by default to open and display the shortcut to the user
 	* Example: `shortcuts://import-shortcut/?name=Awesome%20Shortcut&url=https%3A%2F%2Fdownloadwebsite.com`
-	* 
 
 * Run Shortcut: `shortcuts://run-shortcut`
 	* Query parameters:
